@@ -35,7 +35,6 @@ def getAllUsers():
 @calculateExecutionTime
 def sendMail():
     print("Sending mail...")
-
     print("Mail sent!")
 
 sendMail()
