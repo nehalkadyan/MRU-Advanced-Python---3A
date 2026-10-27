@@ -65,9 +65,42 @@ class BankAccount:
 
     def check_balance(self):
         print(f"Current Balance is : {self.balance}")
-# object from class -> Bank Account
-user1 = BankAccount("AC1003", "John Doe", 100000)
+
+# Child Class -> Inheriting properties from BankAccount class
+# child class savings account
+class SavingsAccount(BankAccount):
+    def printAccountType(self):
+        print("This is savings account!")
+
+# child class current account
+class CurrentAccount(BankAccount):
+    def printAccountType(self):
+        print("This is current account!")
+
+# child class objects / instances
+# object from savingsAccount class
+user1 = SavingsAccount("ACC1003", "John Doe", 50000)
+
+# using parent's class functions/methods on the object built with child class
 user1.check_balance()
+user1.deposit(20000)
+user1.check_balance()
+user1.printAccountType()
+
+# object from currentAccount class
+
+user2 = CurrentAccount("ACC1004", "John Smith", 100000)
+user2.deposit(30000)
+user2.check_balance()
+user2.withdraw_from_bank(10000)
+user2.check_balance()
+user2.printAccountType()
+
+# object from class -> Bank Account
+# user1 = BankAccount("AC1003", "John Doe", 100000)
+# user1.check_balance()
+
+# 
 
 
 
